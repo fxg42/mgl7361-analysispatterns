@@ -15,11 +15,15 @@ public class Organization extends Party {
     setParent(parent);
   }
 
+  public Organization getParent () {
+    return parent;
+  }
   public void setParent (Organization parent) {
     if (parent != null && parent.getAncestors().contains(this))
       throw new IllegalArgumentException("cannot be an ancestor of self");
     this.parent = parent;
   }
+
   protected Set<Organization> getAncestors () {
     Set<Organization> ancestors = new HashSet<Organization>();
     if (parent != null) {
@@ -31,5 +35,3 @@ public class Organization extends Party {
 }
 
 // vim:ts=2:sw=2
-
-
