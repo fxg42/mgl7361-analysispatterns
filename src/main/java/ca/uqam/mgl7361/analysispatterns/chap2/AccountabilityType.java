@@ -10,6 +10,14 @@ public class AccountabilityType {
   public String getName () {
     return name;
   }
+
+  public boolean canCreateAccountability (Party commissioner, Party responsible) {
+    return areValidPartyTypes(commissioner, responsible);
+  }
+
+  protected boolean areValidPartyTypes (Party commissioner, Party responsible) {
+    return true;
+  }
 }
 
 // vim:ts=2:sw=2:

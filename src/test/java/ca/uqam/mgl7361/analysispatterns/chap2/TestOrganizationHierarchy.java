@@ -5,21 +5,12 @@ import static org.junit.Assert.*;
 
 public class TestOrganizationHierarchy {
 
-  @Test public void it_builds_hierarchies () {
-    Organization region = new Organization("region");
-    Organization division = new Organization("division", region);
-    Organization bureau = new Organization("bureau", division);
-
-    assertEquals(division, bureau.getParent());
-    assertEquals(region, division.getParent());
-    assertNull(region.getParent());
-  }
-
-  @Test(expected=IllegalArgumentException.class) public void it_ensures_dag () {
-    Organization region = new Organization("region");
-    Organization division = new Organization("division", region);
-    Organization bureau = new Organization("bureau", division);
-    region.setParent(bureau);
+  @Test public void regions_are_divided_into_divisions () {
+    PartyType region = new PartyType ("region");
+    PartyType division = new PartyType ("division");
+    ConnectionAccountabilityType region_into_division =
+        new ConnectionAccountabilityType ("regions into divisions");
+    region_into_division.addConnectionRule(region, division);
   }
 }
 

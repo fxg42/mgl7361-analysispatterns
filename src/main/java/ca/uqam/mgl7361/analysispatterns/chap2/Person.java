@@ -1,8 +1,8 @@
 package cq.uqam.mgl7361.analysispatterns.chap2;
 
 public class Person extends Party {
-  public Person (String name) {
-    super(name);
+  public Person (String name, PartyType type) {
+    super(name, type);
   }
 }
 

@@ -5,11 +5,11 @@ import java.util.*;
 public class Organization extends Party {
   private Organization parent;
 
-  public Organization (String name) {
-    this(name, null);
+  public Organization (String name, PartyType type) {
+    this(name, type, null);
   }
-  public Organization (String name, Organization parent) {
-    super(name);
+  public Organization (String name, PartyType type, Organization parent) {
+    super(name, type);
     setParent(parent);
   }
 

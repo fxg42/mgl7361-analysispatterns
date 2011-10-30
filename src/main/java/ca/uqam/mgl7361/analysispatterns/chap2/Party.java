@@ -3,6 +3,7 @@ package cq.uqam.mgl7361.analysispatterns.chap2;
 import java.util.*;
 
 public class Party {
+  private PartyType type;
   private String name;
   // In order of preference
   private List addresses = new ArrayList<Address>();
@@ -11,8 +12,9 @@ public class Party {
   private Set<Accountability> commissionerAccountabilities = new HashSet<Accountability>();
   private Set<Accountability> responsibleAccountabilities = new HashSet<Accountability>();
 
-  public Party (String name) {
+  public Party (String name, PartyType type) {
     this.name = name;
+    this.type = type;
   }
 
   boolean commissionersInclude (Party sample, AccountabilityType type) {
@@ -36,6 +38,10 @@ public class Party {
 
   void addResponsible (Accountability responsible) {
     responsibleAccountabilities.add(responsible);
+  }
+
+  public PartyType getType () {
+    return type;
   }
 }
 

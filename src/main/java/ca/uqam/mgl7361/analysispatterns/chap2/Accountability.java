@@ -23,7 +23,7 @@ public class Accountability {
   static boolean canCreate (Party commissioner, Party responsible, AccountabilityType type) {
     if (commissioner.equals(responsible)) return false;
     if (commissioner.commissionersInclude(responsible, type)) return false;
-    return true;
+    return type.canCreateAccountability(commissioner, responsible);
   }
 
   public Party getCommissioner () {
