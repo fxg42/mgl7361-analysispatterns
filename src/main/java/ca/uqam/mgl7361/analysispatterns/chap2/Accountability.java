@@ -1,11 +1,13 @@
 package cq.uqam.mgl7361.analysispatterns.chap2;
 
+import java.util.*;
+
 public class Accountability {
   private Party commissioner;
   private Party responsible;
   private AccountabilityType type;
   private TimePeriod timePeriod;
-  private OperatingScope scope;
+  private Set<OperatingScope> operatingScopes = new HashSet<OperatingScope>();
 
   private Accountability (Party commissioner, Party responsible, AccountabilityType type) {
     this.commissioner = commissioner;
@@ -39,8 +41,8 @@ public class Accountability {
   public void setTimePeriod (TimePeriod timePeriod) {
     this.timePeriod = timePeriod;
   }
-  public void setOperatingScope (OperatingScope scope) {
-    this.scope = scope;
+  public void addOperatingScope (OperatingScope scope) {
+    this.operatingScopes.add(scope);
   }
 }
 

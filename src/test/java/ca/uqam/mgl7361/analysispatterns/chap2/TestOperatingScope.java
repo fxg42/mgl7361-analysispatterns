@@ -1,6 +1,5 @@
 package cq.uqam.mgl7361.analysispatterns.chap2;
 
-import java.util.*;
 import org.junit.*;
 import static org.junit.Assert.*;
 
@@ -15,7 +14,7 @@ public class TestOperatingScope {
     Accountability anEmployment = Accountability.create(stmarys, john, employment);
 
     OperatingScope liverTransplants = new ProtocolScope(20, "liver transplants", "southeast London");
-    anEmployment.setOperatingScope(liverTransplants);
+    anEmployment.addOperatingScope(liverTransplants);
   }
 }
 
