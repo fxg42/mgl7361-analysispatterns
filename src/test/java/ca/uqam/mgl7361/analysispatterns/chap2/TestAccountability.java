@@ -34,12 +34,12 @@ public class TestAccountability {
     Organization stmary = new Organization ("St. Mary's Hospital");
     Organization parkside = new Organization ("Parkside District Health Authority");
     AccountabilityType endoscopyService = new AccountabilityType ("endoscopy service");
-    TimePeriod allOf1996 = new TimePeriod(
+    TimePeriod allOf1996and1997 = new TimePeriod(
         new GregorianCalendar(1996, JANUARY, 01),
-        new GregorianCalendar(1996, DECEMBER, 31));
+        new GregorianCalendar(1997, DECEMBER, 31));
 
     Accountability.create(parkside, stmary, endoscopyService)
-        .setTimePeriod(allOf1996);
+        .setTimePeriod(allOf1996and1997);
   }
 }
 

@@ -16,7 +16,7 @@ public class Accountability {
 
   static Accountability create (Party commissioner, Party responsible, AccountabilityType type) {
     if (!canCreate(commissioner, responsible, type))
-      throw new IllegalArgumentException ("Invalid Accountability");
+      throw new IllegalArgumentException ("invalid accountability");
     else return new Accountability (commissioner, responsible, type);
   }
 
