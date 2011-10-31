@@ -7,16 +7,15 @@ public class Address {
   private String type;
   private List<String> lines = new ArrayList<String>();
   // validity period
-  private Date from;
-  private Date to; // can be null
+  private TimePeriod timePeriod;
 
   public Address (String type, List<String> lines) {
-    this(type, lines, new Date());
+    this(type, lines, new TimePeriod());
   }
-  public Address (String type, List<String> lines, Date from) {
+  public Address (String type, List<String> lines, TimePeriod timePeriod) {
     this.type = type;
     this.lines.addAll(lines);
-    this.from = new Date(from.getTime());
+    this.timePeriod = timePeriod;
   }
   // getters and setters...
 }

@@ -6,6 +6,12 @@ public class TimePeriod {
   private Calendar from;
   private Calendar to;
 
+  public TimePeriod () {
+    this(Calendar.getInstance());
+  }
+  public TimePeriod (Calendar from) {
+    this.from = from;
+  }
   public TimePeriod (Calendar from, Calendar to) {
     if (from.after(to))
       throw new IllegalArgumentException("invalid calendar range");
